@@ -1,0 +1,70 @@
+# === JAVA ===
+*.class
+*.jar
+*.war
+*.ear
+
+# Logs
+*.log
+
+# Compiled files
+*.class
+
+# IntelliJ IDEA / Eclipse
+.idea/
+*.iml
+*.ipr
+*.iws
+*.classpath
+*.project
+*.settings/
+
+# Maven
+target/
+
+# Gradle
+.gradle/
+build/
+!gradle-wrapper.jar
+
+# === REACT NATIVE ===
+# Node modules
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+
+# Watchman
+.watchmanconfig
+
+# Metro bundler
+.expo/
+.expo-shared/
+.expo-cache/
+
+# Android
+android/.gradle/
+android/app/build/
+android/build/
+android/local.properties
+android/.idea/
+android/.cxx/
+
+# iOS
+ios/Pods/
+ios/build/
+ios/*.xcodeproj/
+ios/*.xcworkspace
+ios/.xcconfig
+
+# Misc
+*.log
+*.tmp
+*.swp
+.env
+.env.*
+.DS_Store
+
+# VSCode
+.vscode/
