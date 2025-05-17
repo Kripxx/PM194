@@ -1,70 +1,53 @@
-# === JAVA ===
-*.class
-*.jar
-*.war
-*.ear
+# React Native
+node_modules/
+ios/build/
+android/app/build/
+android/.gradle/
+android/.idea/
+android/local.properties
+*.keystore
+*.jks
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
 
 # Logs
 *.log
 
-# Compiled files
-*.class
+# Metro / React Native
+.expo/
+.expo-shared/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+babel.config.js
+.env
+.env.*
 
-# IntelliJ IDEA / Eclipse
+# JetBrains IDEs
 .idea/
-*.iml
-*.ipr
-*.iws
-*.classpath
-*.project
-*.settings/
 
-# Maven
-target/
+# VS Code
+.vscode/
+
+# Bundle output
+*.bundle
+*.map
+
+# CocoaPods
+ios/Pods/
+ios/Podfile.lock
 
 # Gradle
 .gradle/
-build/
-!gradle-wrapper.jar
-
-# === REACT NATIVE ===
-# Node modules
-node_modules/
-npm-debug.log
-yarn-error.log
-package-lock.json
-yarn.lock
-
-# Watchman
-.watchmanconfig
-
-# Metro bundler
-.expo/
-.expo-shared/
-.expo-cache/
-
-# Android
-android/.gradle/
-android/app/build/
-android/build/
-android/local.properties
-android/.idea/
-android/.cxx/
-
-# iOS
-ios/Pods/
-ios/build/
-ios/*.xcodeproj/
-ios/*.xcworkspace
-ios/.xcconfig
 
 # Misc
-*.log
-*.tmp
+*.apk
+*.aar
+*.iml
 *.swp
-.env
-.env.*
-.DS_Store
-
-# VSCode
-.vscode/
+*.swo
