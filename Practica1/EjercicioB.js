@@ -7,4 +7,4 @@
 //Funcion de flecha
 const cuadrado = (numero) => numero * numero;
 //Ejecuta la funcion
-console.log(cuadrado(5)); 
+console.log(cuadrado(50)); 
