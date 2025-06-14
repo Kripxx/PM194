@@ -3,13 +3,13 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Button } from 'react-native';
 import React, { useState } from 'react';
 
-const Texto = () => {
+const Texto = ({style}) => {
   const [children, setChildren] = useState('Hola Mundo Rnative');
   const actualizarTexto = () => {
     setChildren('Hola Mundo Rnative Actualizado');
   }
   return (
-    <Text onPress={actualizarTexto}>{children}</Text>
+    <Text style={[styles.text, style]} onPress={actualizarTexto}>{children}</Text>
   );
 };
 
@@ -27,8 +27,9 @@ const Boton = () => {
 export default function App() {
   return (
     <View style={styles.container}>
-      <Texto>Hola Mundo</Texto>
-      <Boton />
+      <Texto style={styles.red}>Hola Mundo</Texto>
+      <Texto style={styles.blue}>Hola Mundo</Texto>
+      <Texto style={styles.green}>Hola Mundo</Texto>
       <StatusBar style="auto" />
     </View>
   );
@@ -38,7 +39,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: 'baseline',
+    justifyContent: 'row',
   },
+  text:{
+    color:'#fff',
+    fontSize: 27,
+  },
+  red:{backgroundColor:'red'},
+  blue:{backgroundColor:'blue'},
+  green:{backgroundColor:'green'}
 });
