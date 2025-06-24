@@ -20,7 +20,7 @@ export default function App() {
   // 3. Contenido principal con ImageBackground
   return (
     <ImageBackground 
-      source={require('./assets/upq.jpg')} 
+      source={require('./assets/meme1.png')} 
       style={styles.background}
       resizeMode="cover"
     >
