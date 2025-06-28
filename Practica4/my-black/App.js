@@ -1,60 +1,30 @@
-import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { ImageBackground } from 'react-native';
-import * as SplashScreen from 'expo-splash-screen';
-
-// 1. Configuramos el SplashScreen
-SplashScreen.preventAutoHideAsync();
+import React from 'react';
+import { StyleSheet, Text, ScrollView } from 'react-native';
 
 export default function App() {
-  const [appReady, setAppReady] = useState(false);
+  const textos = Array.from({ length: 50 }, (_, i) => `Hola desde mi apppppp #${i + 1}`);
 
-  // 2. Simulamos carga de recursos
-  useEffect(() => {
-    setTimeout(async () => {
-      setAppReady(true);
-      await SplashScreen.hideAsync();
-    }, 2000); // 2 segundos de splash
-  }, []);
-
-  // 3. Contenido principal con ImageBackground
   return (
-    <ImageBackground 
-      source={require('./assets/meme1.png')} 
-      style={styles.background}
-      resizeMode="cover"
-    >
-      <View style={styles.container}>
-        <Text style={styles.title}>Mi App</Text>
-        <Text style={styles.subtitle}>
-          {appReady ? '¡Carga completa!' : 'Cargando...'}
+    <ScrollView contentContainerStyle={styles.container} 
+    showsVerticalScrollIndicator={false}
+    horizontal={true}>
+      {textos.map((texto, index) => (
+        <Text key={index} style={styles.text}>
+          {texto}
         </Text>
-      </View>
-    </ImageBackground>
+      ))}
+    </ScrollView>
   );
 }
 
-// 4. Estilos simples
 const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-    width: '100%',
-    height: '100%',
-  },
   container: {
-    flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.5)', // overlay semitransparente
-    justifyContent: 'center',
+    flexGrow: 1,
     alignItems: 'center',
+    paddingVertical: 50,
   },
-  title: {
-    color: 'white',
-    fontSize: 32,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
-  subtitle: {
-    color: 'white',
+  text: {
     fontSize: 18,
-  }
+    marginVertical: 5,
+  },
 });
