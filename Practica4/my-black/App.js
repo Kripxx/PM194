@@ -1,19 +1,35 @@
-import React from 'react';
-import { StyleSheet, Text, ScrollView } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, ActivityIndicator, Button, View } from 'react-native';
 
 export default function App() {
-  const textos = Array.from({ length: 50 }, (_, i) => `Hola desde mi apppppp #${i + 1}`);
+  const [loading, setLoading] = useState(false);
+  const [menssagens, setMensagens] = useState('');
+
+  const simularCarga = () => {
+    setLoading(true);
+    setMensagens('');
+    setTimeout(() => {
+      setMensagens('Carga simulada com sucesso!');
+      setLoading(false);
+    }, 3000);
+  };
 
   return (
-    <ScrollView contentContainerStyle={styles.container} 
-    showsVerticalScrollIndicator={false}
-    horizontal={true}>
-      {textos.map((texto, index) => (
-        <Text key={index} style={styles.text}>
-          {texto}
-        </Text>
-      ))}
-    </ScrollView>
+    <View style={styles.container}>
+      <Text style={styles.text}>Simulador de Carga</Text>
+
+      {loading ? (
+        <>
+          <ActivityIndicator size="large" color="#0000ff" />
+          <Text style={styles.text}>Cargando...</Text>
+        </>
+      ) : (
+        <View style={{ alignItems: 'center' }}>
+          <Button title="Simular Carga" onPress={simularCarga} />
+          {menssagens !== '' && <Text style={styles.exito}>{menssagens}</Text>}
+        </View>
+      )}
+    </View>
   );
 }
 
@@ -22,9 +38,16 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     alignItems: 'center',
     paddingVertical: 50,
+    justifyContent: 'center',
   },
   text: {
     fontSize: 18,
-    marginVertical: 5,
+    marginVertical: 10,
+    textAlign: 'center',
+  },
+  exito: {
+    fontSize: 16,
+    color: 'green',
+    marginTop: 20,
   },
 });
