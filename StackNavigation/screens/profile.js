@@ -1,23 +1,13 @@
-import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
-export default function Profile({ navigation }) {
+export default function Profile() {
     return (
         <View style={styles.container}>
-            <Text style={styles.title}>Pantalla de Perfil</Text>
-
-            <Pressable 
-                style={[styles.button, styles.buttonSettings]} 
-                onPress={() => navigation.navigate('Settings')}
-            >
-                <Text style={styles.buttonText}>Ir a Configuración</Text>
-            </Pressable>
-
-            <Pressable 
-                style={[styles.button, styles.buttonHome]} 
-                onPress={() => navigation.navigate('Home')}
-            >
-                <Text style={styles.buttonText}>Volver a Home</Text>
-            </Pressable>
+            <View style={styles.iconRow}>
+                <Ionicons name="person-outline" size={28} color="green" />
+                <Text style={styles.title}>Perfil de usuario</Text>
+            </View>
         </View>
     );
 }
@@ -30,29 +20,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 20,
     },
+    iconRow: {
+        flexDirection: 'column',
+        alignItems: 'center',
+    },
     title: {
         fontSize: 22,
         fontWeight: 'bold',
-        marginBottom: 40,
-        textAlign: 'center',
-    },
-    button: {
-        paddingVertical: 12,
-        paddingHorizontal: 30,
-        borderRadius: 8,
-        marginBottom: 20,
-        width: '88%',
-        alignItems: 'center',
-    },
-    buttonSettings: {
-        backgroundColor: '#FF8890', // Rosado
-    },
-    buttonHome: {
-        backgroundColor: '#4BA745', // Verde
-    },
-    buttonText: {
-        color: '#fff',
-        fontSize: 16,
-        fontWeight: '600',
+        marginTop: 10,  // Cambiado de marginLeft a marginTop para disposición en columna
+        color: 'green',
     },
 });
