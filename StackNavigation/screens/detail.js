@@ -1,18 +1,21 @@
 import { View, Text, StyleSheet, Pressable } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-export default function Profile({ navigation }) {
+export default function Detail({ navigation }) {
     return (
         <View style={styles.container}>
             <View style={styles.iconRow}>
-                <Ionicons name="person-outline" size={28} color="green" />
-                <Text style={styles.title}>Perfil de usuario</Text>
+                <Ionicons name="person-circle-outline" size={48} color="#B07BFF" />
+                <Text style={styles.title}>Detalles del usuario</Text>
+                <Text style={styles.text}>Nombre: Juan Pérez</Text>
+                <Text style={styles.text}>Email: juan@example.com</Text>
+                <Text style={styles.text}>Teléfono: +123456789</Text>
                 
                 <Pressable 
-                    style={styles.button}
-                    onPress={() => navigation.navigate('Detail')}
+                    style={styles.backButton}
+                    onPress={() => navigation.goBack()}
                 >
-                    <Text style={styles.buttonText}>Detalles de usuario</Text>
+                    <Text style={styles.buttonText}>Volver a Perfil</Text>
                 </Pressable>
             </View>
         </View>
@@ -24,22 +27,24 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         justifyContent: 'center',
-        alignItems: 'center',
         padding: 20,
     },
     iconRow: {
-        flexDirection: 'column',
         alignItems: 'center',
     },
     title: {
         fontSize: 22,
         fontWeight: 'bold',
         marginVertical: 20,
-        color: 'green',
+        color: '#B07BFF',
     },
-    button: {
-        marginTop: 20,
-        backgroundColor: 'green',
+    text: {
+        fontSize: 16,
+        marginVertical: 5,
+    },
+    backButton: {
+        marginTop: 30,
+        backgroundColor: '#B07BFF',
         padding: 15,
         borderRadius: 8,
         width: '80%',
