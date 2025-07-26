@@ -24,6 +24,18 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "1e95db94-b1ae-43db-b4fd-1c315f4bd7a7"
+      }
+    },
+    "owner": "joshuarloa",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/1e95db94-b1ae-43db-b4fd-1c315f4bd7a7"
     }
   }
 }
